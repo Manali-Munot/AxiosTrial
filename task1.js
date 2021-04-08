@@ -1,7 +1,9 @@
-var axios = require('axios')["default"];
+"use strict";
 function fetchData() {
-    axios.get('https://cat-fact.herokuapp.com/facts').then(function (response) {
-        console.log(response);
+    fetch('https://cat-fact.herokuapp.com/facts')
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+        console.log(data);
     });
 }
 fetchData();
